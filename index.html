@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#15110f">
+<title>老成都印象 · Lao Cheng Du Yin Xiang</title>
+<meta name="description" content="老成都印象 · Sichuan cuisine concept website in Singapore.">
+<style>
+:root{
+  --bg:#120f0d;--panel:#1b1512;--panel2:#211915;--cream:#f5eee2;
+  --muted:#b8aaa0;--gold:#dca447;--red:#a72d22;--line:#3a2d26;
+  --max:1120px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--cream);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Helvetica Neue",Arial,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{width:min(calc(100% - 36px),var(--max));margin:auto}
+.demo{background:var(--gold);color:#17110b;text-align:center;font-size:11px;letter-spacing:2px;font-weight:700;padding:12px 16px}
+header{position:sticky;top:0;z-index:20;background:rgba(18,15,13,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}.seal{width:44px;height:44px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:20px;color:var(--gold)}
+.brand strong{display:block;font:28px Georgia,serif}.brand small{color:var(--muted);letter-spacing:2px;font-size:9px}
+.lang{border:1px solid var(--line);background:none;color:var(--cream);border-radius:999px;padding:11px 16px;font-size:14px;cursor:pointer}
+.hero{padding:82px 0 70px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:560px;height:560px;right:-220px;top:40px;background:radial-gradient(circle,rgba(167,45,34,.38),transparent 65%);pointer-events:none}
+.kicker{color:var(--gold);letter-spacing:4px;font-size:13px;font-weight:700}
+h1{font:clamp(60px,10vw,126px)/.88 Georgia,"Times New Roman",serif;margin:25px 0 25px;letter-spacing:-5px}
+h1 span{color:var(--gold);font-style:italic}
+.lead{max-width:650px;color:#d2c7bd;font-size:clamp(20px,3vw,28px);line-height:1.65;margin:0 0 30px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 25px;border-radius:4px;font-weight:700;border:1px solid var(--gold)}
+.btn.primary{background:var(--gold);color:#17110b}.btn.ghost{border-color:#68564a}
+.meta{display:flex;gap:25px;flex-wrap:wrap;color:var(--muted);font-size:14px;margin-top:28px}.meta b{color:var(--cream);font-weight:500}
+section{padding:75px 0;border-top:1px solid var(--line)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}
+.eyebrow{color:var(--gold);letter-spacing:3px;font-size:12px;font-weight:700}.section-head h2{font:42px Georgia,serif;margin:8px 0 0}.section-head p{color:var(--muted);max-width:470px;line-height:1.7;margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:linear-gradient(145deg,var(--panel),#17110f);border:1px solid var(--line);min-height:250px;padding:25px;position:relative;overflow:hidden}
+.card:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-80px;bottom:-80px;background:rgba(220,164,71,.12)}
+.card .num{color:var(--gold);font:30px Georgia,serif}.card h3{font-size:24px;margin:28px 0 10px}.card p{color:var(--muted);line-height:1.7}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:14px}.dish{display:flex;justify-content:space-between;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}.dish h3{margin:0 0 7px;font-size:18px}.dish p{margin:0;color:var(--muted);font-size:13px}.price{color:var(--gold);white-space:nowrap}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:18px}.story-box{min-height:360px;border:1px solid var(--line);padding:32px;background:radial-gradient(circle at 70% 30%,rgba(167,45,34,.3),transparent 40%),#17110f}.story-box h3{font:38px Georgia,serif;margin-top:0}.story-box p{color:#c5b8ae;line-height:1.9;font-size:17px}
+.contact{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.contact-box{border:1px solid var(--line);padding:32px;background:var(--panel)}.contact-box h3{font:32px Georgia,serif;margin:0 0 20px}.info{padding:14px 0;border-bottom:1px solid var(--line)}.info span{display:block;color:var(--muted);font-size:12px;letter-spacing:2px;margin-bottom:5px}
+footer{padding:55px 0;color:var(--muted);border-top:1px solid var(--line)}footer strong{font:26px Georgia,serif;color:var(--cream)}
+.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);opacity:0;background:#f5eee2;color:#15110f;padding:12px 18px;border-radius:999px;z-index:50;transition:.25s;font-size:14px}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:760px){
+ .wrap{width:min(calc(100% - 28px),var(--max))}.nav{height:70px}.brand strong{font-size:23px}
+ .hero{padding:62px 0 55px}h1{font-size:70px;letter-spacing:-4px}.lead{font-size:19px}
+ .cards,.menu,.story,.contact{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:15px}
+ section{padding:58px 0}.card{min-height:210px}
+}
+</style>
+</head>
+<body>
+<div class="demo">CONCEPT DEMO · NOT THE OFFICIAL LAO CHENG DU YIN XIANG WEBSITE</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Lao Cheng Du Yin Xiang">
+      <div class="seal">川</div>
+      <div><strong>老成都印象</strong><small>SICHUAN CUISINE · SINGAPORE</small></div>
+    </a>
+    <button class="lang" id="langBtn">中文　⌄</button>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker" data-zh="新加坡 · 川菜馆" data-en="SINGAPORE · SICHUAN CUISINE">新加坡 · 川菜馆</div>
+    <h1><span>老成都</span><br>印象。</h1>
+    <p class="lead" data-zh="一口麻辣，一份热气，一桌成都味。让你在新加坡，也能随时找到熟悉的川味。" data-en="Bold Sichuan flavours, warm plates and a taste of Chengdu — right here in Singapore.">一口麻辣，一份热气，一桌成都味。让你在新加坡，也能随时找到熟悉的川味。</p>
+    <div class="actions">
+      <a class="btn primary" href="#menu" data-zh="查看菜单" data-en="View menu">查看菜单</a>
+      <a class="btn ghost" href="#contact" data-zh="联系餐厅" data-en="Contact restaurant">联系餐厅</a>
+    </div>
+    <div class="meta">
+      <span>● <b data-zh="24小时营业" data-en="Open 24 hours">24小时营业</b></span>
+      <span>● <b data-zh="川菜馆" data-en="Sichuan cuisine">川菜馆</b></span>
+      <span>● <b data-zh="$1–10 · 以餐厅最新资料为准" data-en="$1–10 · subject to confirmation">$1–10 · 以餐厅最新资料为准</b></span>
+    </div>
+  </div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="eyebrow">01 / WHY US</div><h2 data-zh="成都味，认真做。" data-en="A taste of Chengdu.">成都味，认真做。</h2></div>
+    <p data-zh="这是一个展示用概念网站。正式上线前，可替换成餐厅确认后的真实菜单、照片、电话和营业资料。" data-en="This is a concept demo. Before launch, replace the content with the restaurant's confirmed menu, photos, phone and business details.">这是一个展示用概念网站。正式上线前，可替换成餐厅确认后的真实菜单、照片、电话和营业资料。</p>
+  </div>
+  <div class="cards">
+    <article class="card"><div class="num">01</div><h3 data-zh="麻辣鲜香" data-en="Bold & aromatic">麻辣鲜香</h3><p data-zh="用清晰的菜品分类，让顾客快速找到自己想吃的味道。" data-en="Clear categories help guests quickly discover the flavours they want.">用清晰的菜品分类，让顾客快速找到自己想吃的味道。</p></article>
+    <article class="card"><div class="num">02</div><h3 data-zh="热气上桌" data-en="Fresh from the kitchen">热气上桌</h3><p data-zh="突出招牌菜、辣度和推荐理由，适合手机端快速浏览。" data-en="Highlight signature dishes, spice levels and recommendations for fast mobile browsing.">突出招牌菜、辣度和推荐理由，适合手机端快速浏览。</p></article>
+    <article class="card"><div class="num">03</div><h3 data-zh="方便到店" data-en="Easy to visit">方便到店</h3><p data-zh="地址、营业时间和联系入口集中展示，让顾客少走一步。" data-en="Keep location, hours and contact options together so guests can act quickly.">地址、营业时间和联系入口集中展示，让顾客少走一步。</p></article>
+  </div>
+</div>
+</section>
+
+<section id="menu">
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="eyebrow">02 / MENU</div><h2 data-zh="菜单预览" data-en="Menu preview">菜单预览</h2></div>
+    <p data-zh="以下为网站 Demo 的示例栏目，不代表餐厅正式菜单或价格。" data-en="Sample content for the demo only. It is not the restaurant's official menu or pricing.">以下为网站 Demo 的示例栏目，不代表餐厅正式菜单或价格。</p>
+  </div>
+  <div class="menu">
+    <div>
+      <div class="dish"><div><h3 data-zh="招牌川味菜" data-en="Signature Sichuan dishes">招牌川味菜</h3><p data-zh="正式上线时放入真实菜名与照片" data-en="Replace with confirmed dishes and photos">正式上线时放入真实菜名与照片</p></div><div class="price">01</div></div>
+      <div class="dish"><div><h3 data-zh="下饭热菜" data-en="Wok favourites">下饭热菜</h3><p data-zh="适合多人分享" data-en="Made for sharing">适合多人分享</p></div><div class="price">02</div></div>
+      <div class="dish"><div><h3 data-zh="小菜 · 凉菜" data-en="Small plates">小菜 · 凉菜</h3><p data-zh="清爽与麻辣搭配" data-en="Cool, crisp and spicy">清爽与麻辣搭配</p></div><div class="price">03</div></div>
+    </div>
+    <div>
+      <div class="dish"><div><h3 data-zh="主食 · 面点" data-en="Rice & noodles">主食 · 面点</h3><p data-zh="正式上线时放入真实菜单" data-en="Replace with confirmed menu items">正式上线时放入真实菜单</p></div><div class="price">04</div></div>
+      <div class="dish"><div><h3 data-zh="饮品" data-en="Drinks">饮品</h3><p data-zh="可加入酒水与无酒精饮品" data-en="Add alcoholic and non-alcoholic drinks">可加入酒水与无酒精饮品</p></div><div class="price">05</div></div>
+      <div class="dish"><div><h3 data-zh="外带 / 自取" data-en="Takeaway">外带 / 自取</h3><p data-zh="可按餐厅实际服务接入" data-en="Connect according to the restaurant's actual service">可按餐厅实际服务接入</p></div><div class="price">06</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap story">
+  <div class="story-box"><div class="eyebrow">03 / THE STORY</div><h3 data-zh="从成都，到新加坡。" data-en="From Chengdu to Singapore.">从成都，到新加坡。</h3><p data-zh="把餐厅自己的故事放在这里：创店缘起、招牌菜、主厨理念，以及为什么想把成都味带到新加坡。这个区域也可以换成真实餐厅照片。" data-en="Tell the restaurant's real story here: its beginnings, signature dishes, chef's philosophy and why it brings Chengdu flavours to Singapore. This area can also become a photo feature.">把餐厅自己的故事放在这里：创店缘起、招牌菜、主厨理念，以及为什么想把成都味带到新加坡。这个区域也可以换成真实餐厅照片。</p></div>
+  <div class="story-box"><div class="eyebrow">04 / VISIT</div><h3 data-zh="今晚，吃点辣的。" data-en="Tonight, make it spicy.">今晚，吃点辣的。</h3><p data-zh="正式版本可以加入真实地址、Google Maps 导航、电话、外卖平台和餐厅社交媒体入口。点击下方联系区域即可查看 Demo 状态。" data-en="The final version can include the confirmed address, Google Maps directions, phone, delivery platforms and social links. See the contact section below for the demo status.">正式版本可以加入真实地址、Google Maps 导航、电话、外卖平台和餐厅社交媒体入口。点击下方联系区域即可查看 Demo 状态。</p></div>
+</div>
+</section>
+
+<section id="contact">
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="eyebrow">05 / CONTACT</div><h2 data-zh="找到老成都印象" data-en="Find us">找到老成都印象</h2></div>
+    <p data-zh="这里先保留为 Demo。拿到餐厅确认资料后，我可以把按钮全部接到真实电话、地图和预订/外卖系统。" data-en="This section is intentionally kept as a demo until the restaurant confirms its details.">这里先保留为 Demo。拿到餐厅确认资料后，我可以把按钮全部接到真实电话、地图和预订/外卖系统。</p>
+  </div>
+  <div class="contact">
+    <div class="contact-box">
+      <h3>老成都印象</h3>
+      <div class="info"><span>TYPE</span>川菜馆 · Sichuan Cuisine</div>
+      <div class="info"><span>HOURS</span>24 小时营业 · 以餐厅最新资料为准</div>
+      <div class="info"><span>PRICE</span>$1–10 · 以餐厅最新资料为准</div>
+      <div class="info"><span>ADDRESS / PHONE</span>等待餐厅确认后加入</div>
+    </div>
+    <div class="contact-box">
+      <h3 data-zh="准备好了？" data-en="Ready?">准备好了？</h3>
+      <p style="color:var(--muted);line-height:1.8" data-zh="这个按钮现在不会拨打虚假号码。收到店家确认资料后，再接入真实联系方式。" data-en="This button does not use a fake phone number. Connect the real contact details after the restaurant confirms them.">这个按钮现在不会拨打虚假号码。收到店家确认资料后，再接入真实联系方式。</p>
+      <button class="btn primary" style="width:100%;margin-top:12px" id="contactBtn" data-zh="联系资料待确认" data-en="Contact details pending">联系资料待确认</button>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap"><strong>老成都印象</strong><p>Concept demo · Singapore · Sichuan Cuisine</p></div></footer>
+<div class="toast" id="toast">联系方式等待餐厅确认</div>
+
+<script>
+const btn=document.getElementById('langBtn'), toast=document.getElementById('toast');
+let en=false;
+function applyLang(){
+  document.querySelectorAll('[data-zh]').forEach(el=>el.textContent=en?el.dataset.en:el.dataset.zh);
+  btn.textContent=en?'English　⌄':'中文　⌄';
+  document.documentElement.lang=en?'en':'zh-CN';
+}
+btn.addEventListener('click',()=>{en=!en;applyLang()});
+document.getElementById('contactBtn').addEventListener('click',()=>{
+  toast.textContent=en?'Contact details are pending restaurant confirmation.':'联系方式等待餐厅确认';
+  toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2200);
+});
+applyLang();
+</script>
+</body>
+</html>
